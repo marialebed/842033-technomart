@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Мария Лебедева](https://up.htmlacademy.ru/htmlcss/23/user/842033).
-* Наставник: `Альбина Токарчук`(https://htmlacademy.ru/profile/id167491).
+* Наставник: [Альбина Токарчук](https://htmlacademy.ru/profile/id167491).
 
 ---
 
