@@ -7,14 +7,15 @@
   <body>
     <header class="main-header">
       <section class="header-top">
-        <p class="logo">
+        <div class="logo">
           <a class="logo-link" aria-label="Логотип компании Техномарт">Техномарт</a>
-        </p>
-        <p class="search">
-          <button class="visually-hidden">Поиск</button>
-          <label for="search">Поиск</label>
-          <input type="search" name="search" id="search">
-        </p>
+        </div>
+        <div class="search">
+          <form action="https://echo.htmlacademy.ru" method="get">
+            <label class="visually-hidden" for="search" >Поиск</label>
+            <input type="search" name="search" id="search" placeholder="Поиск">
+          </form>
+        </div>
         <p>
           <a href="#">Закладки</a>
         </p>
@@ -25,10 +26,10 @@
       </section>
       <section class="header-middle">
         <h3>Интернет-магазин строительных материалов и инструментов для ремонта</h3>
-        <p class="header-address">
+        <div class="header-address">
           <a href="tel:88125550555" aria-label="Телефон компании Техномарт">+7 (812) 555-05-55</a>
           <span class="address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</span>
-        </p>
+        </div>
         <ul class="initial-user-navigation">
           <li class="initial-login-link"><a href="#">Войти</a></li>
           <li class="initial-login-link"><a href="#">Регистрация</a></li>
@@ -70,39 +71,6 @@
           <a class="button" href="contacts.html">Заблудились? Напишите нам!</a>
         </div>
       </article>
-      <section class="modal-map">
-        <h2 class="visually-hidden">Как до нас добраться</h2>
-        <p>
-          <img src="img/full-map.jpg" width="940" height="450" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
-        </p>
-        <button class="modal-close" type="button">
-          Закрыть
-        </button>
-      </section>
-      <section class="modal">
-        <form action="https://#" method="post">
-          <p>
-            <label for="user-name">Ваше имя:</label>
-            <input type="text" id="user-name" name="name" placeholder="Имя Фамилия">
-          </p>
-          <p>
-            <label for="user-email">Ваш e-mail:</label>
-            <input type="email" id="user-email" name="email" placeholder="email@example.com">
-          </p>
-          <p>
-            <label for="user-letter">Текст письма:</label>
-            <textarea id="user-letter" name="letter" rows="5">
-              В свободной форме
-            </textarea>
-          </p>
-          <button class="button">
-            Отправить
-          </button>
-        </form>
-        <button class="modal-close" type="button">
-          Закрыть
-        </button>
-      </section>
     </main>
     <footer class="main-footer">
       <section class="footer-top">
@@ -149,5 +117,30 @@
         </ul>
       </section>
     </footer>
+    <section class="modal-map">
+      <h2 class="visually-hidden">Как до нас добраться</h2>
+      <div>
+        <img src="img/full-map.jpg" width="940" height="450" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
+      </div>
+      <button class="modal-close" type="button">Закрыть</button>
+    </section>
+    <section class="modal">
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label for="user-name">Ваше имя:</label>
+          <input type="text" id="user-name" name="name" placeholder="Имя Фамилия">
+        </p>
+        <p>
+          <label for="user-email">Ваш e-mail:</label>
+          <input type="email" id="user-email" name="email" placeholder="email@example.com">
+        </p>
+        <p>
+          <label for="user-letter">Текст письма:</label>
+          <textarea id="user-letter" name="letter" placeholder="В свободной форме"></textarea>
+        </p>
+        <button class="button" type="submit">Отправить</button>
+      </form>
+      <button class="modal-close" type="button">Закрыть</button>
+    </section>
   </body>
 </html>
