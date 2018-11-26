@@ -7,35 +7,36 @@
   <body>
     <header class="main-header">
       <section class="header-top">
-        <div class="logo">
-          <a class="logo-link" href="index.html">Техномарт</a>
-        </div>
-        <div class="search">
+        <p class="logo">
+          <a class="logo-link" href="index.html" aria-label="Логотип компании Техномарт">Техномарт</a>
+        </p>
+        <p class="search">
+          <button class="visually-hidden">Поиск</button>
           <label for="search">Поиск</label>
-          <input type="search" name="search">
-        </div>
-        <div>
+          <input type="search" name="search" id="search">
+        </p>
+        <p>
           <a href="#">Закладки</a>
-        </div>
-        <div>
+        </p>
+        <p>
           <a href="#">Корзина: 10</a>
-        </div>
+        </p>
         <a class="button" href="#">Оформить заказ</a>
       </section>
       <section class="header-middle">
         <h3>Интернет-магазин строительных материалов и инструментов для ремонта</h3>
         <p class="header-address">
-          <a href="tel:88125550555">+7 (812) 555-05-55</a>
+          <a href="tel:88125550555" aria-label="Телефон компании Техномарт">+7 (812) 555-05-55</a>
           <span class="address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
         </p>
         <p class="user">
-          <a href="profile.html">Равшан Джамшутович</a>
+          <a href="profile.html" aria-label="Имя пользователя">Равшан Джамшутович</a>
           <ul class="user-navigation">
             <li class="login-link"><a href="#">Мои заказы</a></li>
             <li class="login-link"><a href="#">Личный кабинет</a></li>
           </ul>
         </p>
-        <nav class="header-nav">
+        <nav class="header-nav" aria-label="Навигация по сайту">
           <ul class="site-navigation">
             <li><a href="index.html">Главная</a></li>
             <li><a href="#">Компания</a></li>
@@ -56,29 +57,65 @@
         <li class="breadcrumbs-current">Перфораторы</li>
       </ul>
       <h1>Перфораторы</h1>
-      <section class="filters">
+      <h2 class="visually-hidden">Фильтр</h2>
+      <form class="filter" method="get" action="https://#">
         <div class="price-filter">
           <!-- фильтр по цене -->
         </div>
-        <div class="brands">
-          <h2>Производители:</h2>
+        <fieldset>
+          <legend>Производители:</legend>
           <ul>
-            <li>Bosch</li>
-            <li>Интерскол</li>
-            <li>Makita</li>
-            <li>DeWalt</li>
-            <li>Hitachi</li>
+            <li>
+              <input class="visually-hidden" type="checkbox" name="bosch" id="filter-bosch" checked>
+              <label for="filter-bosch">
+                Bosch
+              </label>
+            </li>
+            <li>
+              <input class="visually-hidden" type="checkbox" name="interscol" id="filter-interscol">
+              <label for="filter-interscol">
+                Интерскол
+              </label>
+            </li>
+            <li>
+              <input class="visually-hidden" type="checkbox" name="makita" id="filter-makita" checked>
+              <label for="filter-makita">
+                Makita
+              </label>
+            </li>
+            <li>
+              <input class="visually-hidden" type="checkbox" name="dewalt" id="filter-dewalt">
+              <label for="filter-dewalt">
+                DeWalt
+              </label>
+            </li>
+            <li>
+              <input class="visually-hidden" type="checkbox" name="hitachi" id="filter-hitachi">
+              <label for="filter-hitachi">
+                Hitachi
+              </label>
+            </li>
           </ul>
-        </div>
-        <div class="power-supply">
-          <h2>Питание</h2>
+        </fieldset>
+        <fieldset>
+          <legend>Питание</legend>
           <ul>
-            <li>Аккумуляторные</li>
-            <li>Сетевые</li>
+            <li>
+              <input class="visually-hidden" type="radio" name="power-supply" value="cordless" id="filter-cordless">
+              <label for="filter-cordless">
+                Аккумуляторные
+              </label>
+            </li>
+            <li>
+              <input class="visually-hidden" type="radio" name="power-supply" value="powerfull" id="filter-powerfull">
+              <label for="filter-powerfull">
+                Сетевые
+              </label>
+            </li>
           </ul>
-        </div>
-        <button>Показать</button>
-      </section>
+        </fieldset>
+        <button type="submit">Показать</button>
+      </form>
         <!-- сортировка -->
       <section class="catalog">
         <ul class="catalog-list">
@@ -198,11 +235,18 @@
           </li>
         </ul>
       </section>
+      <section class="modal-cart">
+        <h2>Товар добавлен в корзину!</h2>
+        <a class="button" href="#">Оформить заказ</a>
+        <button class="button">Продолжить покупки</button>
+        <button class="modal-close" type="button">
+          Закрыть
+        </button>
+      </section>
     </main>
     <footer class="main-footer">
       <section class="footer-top">
         <a class="logo" href="index.html">Техномарт</a>
-        <nav class="footer-nav">
           <ul class="site-navigation">
             <li><a href="index.html">Компания</a></li>
             <li><a href="#">Новости</a></li>
@@ -210,7 +254,6 @@
             <li><a href="#">Доставка</a></li>
             <li><a href="#">Контакты</a></li>
           </ul>
-        </nav>
         <div>
           <address>
             г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
@@ -230,18 +273,18 @@
           Все права защищены
         </p>
         <ul class="social">
-          <li><a href="https://vk.com/">ВКонтакте</a></li>
-          <li><a href="https://facebook.com/">Facebook</a></li>
-          <li><a href="https://instagram.com/">Instagram</a></li>
+          <li><a href="https://vk.com/" aria-label="Техномарт ВКонтакте">ВКонтакте</a></li>
+          <li><a href="https://facebook.com/" aria-label="Техномарт на Фейсбуке">Facebook</a></li>
+          <li><a href="https://instagram.com/" aria-label="Техномарт в Инстаграм">Instagram</a></li>
         </ul>
         <ul class="feedback">
           <li>
             <b>Обратная связь:</b>
-            <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+            <a href="mailto:mail@htmlacademy.ru" aria-label="Адрес электронной почты для обратной связи">mail@htmlacademy.ru</a>
           </li>
           <li>
             <b>Разработано &mdash;</b>
-            <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
+            <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Сайт разработчика">htmlacademy.ru</a>
           </li>
         </ul>
       </section>
