@@ -1,14 +1,18 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
-      <section class="header-top">
+      <section class="header-title">
         <div class="logo">
-          <a class="logo-link" aria-label="Логотип компании Техномарт">Техномарт</a>
+          <a class="header-logo-link" aria-label="Логотип компании Техномарт">Техномарт</a>
         </div>
         <div class="search">
           <form action="https://echo.htmlacademy.ru" method="get">
@@ -16,17 +20,17 @@
             <input type="search" name="search" id="search" placeholder="Поиск">
           </form>
         </div>
-        <ul>
-          <li>
-            <a href="#">Закладки</a>
+        <ul class="header-top">
+          <li class="bookmarks">
+            <a href="#">Закладки:</a>
           </li>
-          <li>
+          <li class="cart">
             <a href="#">Корзина: 0</a>
           </li>
         </ul>
-        <a class="button" href="#">Оформить заказ</a>
+        <a class="button button-order" href="#">Оформить заказ</a>
       </section>
-      <section class="header-middle">
+      <section class="header-content">
         <h3>Интернет-магазин строительных материалов и инструментов для ремонта</h3>
         <div class="header-address">
           <a href="tel:88125550555" aria-label="Телефон компании Техномарт">+7 (812) 555-05-55</a>
@@ -75,16 +79,18 @@
       </article>
     </main>
     <footer class="main-footer">
-      <section class="footer-top">
-        <a class="logo">Техномарт</a>
-          <ul class="site-navigation">
-            <li><a href="#">Компания</a></li>
-            <li><a href="#">Новости</a></li>
-            <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="#">Доставка</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
-        <div>
+      <section class="footer-title">
+        <div class="logo">
+          <a class="footer-logo-link">Техномарт</a>
+        </div>
+        <ul class="site-navigation">
+          <li><a href="#">Компания</a></li>
+          <li><a href="#">Новости</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+        <div class="footer-middle">
           <address>
             г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
             +7 (812) 555-05-55
@@ -97,7 +103,7 @@
           </ul>
         </div>
       </section>
-      <section class="footer-bottom">
+      <section class="page-info">
         <p class="copyright">
           &copy; 2010–2017 Компания «Техномарт»
           Все права защищены
@@ -140,7 +146,9 @@
           <label for="user-letter">Текст письма:</label>
           <textarea id="user-letter" name="letter" placeholder="В свободной форме"></textarea>
         </p>
-        <button class="button" type="submit">Отправить</button>
+        <div>
+          <button class="button" type="submit">Отправить</button>
+        </div>
       </form>
       <button class="modal-close" type="button">Закрыть</button>
     </section>
