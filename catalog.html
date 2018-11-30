@@ -5,24 +5,24 @@
     <title>HTML Academy: Техномарт каталог</title>
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
-      <section class="header-title">
+      <section class="header-logo">
         <div class="logo">
           <a class="header-logo-link" href="index.html" aria-label="Логотип компании Техномарт">Техномарт</a>
         </div>
         <div class="search">
           <form action="https://echo.htmlacademy.ru" method="post">
             <label class="visually-hidden" for="search">Поиск</label>
-            <input type="search" name="search" id="search" placeholder="Поиск">
+            <input class="input-search" type="search" name="search" id="search" placeholder="Поиск">
+            <button class="visually-hidden" type="submit">Искать</button>
           </form>
         </div>
         <ul class="header-top">
           <li class="bookmarks">
-            <a href="#">Закладки:</a>
+            <a href="#">Закладки: 0</a>
           </li>
           <li class="cart">
             <a href="#">Корзина: 10</a>
@@ -58,7 +58,7 @@
     </header>
     <main class="container">
       <ul class="breadcrumbs">
-        <li><a href="index.html" class="visually -hidden">Главная</a></li>
+        <li><a href="index.html" class="visually-hidden">Главная</a></li>
         <li><a href="#">Каталог</a></li>
         <li><a href="#">Инструмент</a></li>
         <li class="breadcrumbs-current">Перфораторы</li>
@@ -72,7 +72,7 @@
           </div>
           <fieldset class="brands">
             <legend>Производители:</legend>
-            <ul class="brands-list">
+            <ul class="catalog-filter">
               <li class="brand-item">
                 <input class="visually-hidden" type="checkbox" name="bosch" id="filter-bosch" checked>
                 <label for="filter-bosch">Bosch</label>
@@ -97,7 +97,7 @@
           </fieldset>
           <fieldset class="power-supply">
             <legend>Питание</legend>
-            <ul class="power-supply-list">
+            <ul class="catalog-filter">
               <li class="power-supply-item">
                 <input class="visually-hidden" type="radio" name="power-supply" value="cordless" id="filter-cordless">
                 <label for="filter-cordless">Аккумуляторные</label>
@@ -244,7 +244,7 @@
           <li><a href="#">Контакты</a></li>
         </ul>
         <div class="footer-middle">
-          <address>
+          <address class="footer-address">
             г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
             +7 (812) 555-05-55
           </address>
