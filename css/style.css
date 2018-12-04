@@ -27,14 +27,14 @@ a {
   background-color: #f3f7f8;
 }
 
-.header-logo {
+.header-row {
   width: 100%;
   margin-bottom: 45px;
   color: #ffffff;
   background-color: #293449;
 }
 
-.header-logo-wrapper {
+.header-row-wrapper {
   display: flex;
   width: 940px;
   margin: 0 auto;
@@ -275,13 +275,13 @@ a {
   width: 220px;
   height: 318px;
   margin: 0;
-  margin-right: 20px;
+  margin-right: 17px;
   margin-bottom: 22px;
   border: 1px solid #e5e5e5;
 }
 
 .catalog-item:nth-child(3n) {
-  margin-right: 0;     /*не понимаю, почему не работает!*/
+  margin-right: 0;
 }
 
 .catalog-item h3 {
