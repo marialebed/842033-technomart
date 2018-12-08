@@ -8,21 +8,44 @@ body {
   background-color: #ffffff;
 }
 
+/*не могу вставить картинки svg и png! чтобы проверить расположение вместо них везде сделала просто цветной фон*/
+
 a {
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .button {
   font-size: 14px;
   text-align: center;
   color: #ffffff;
+  text-transform: uppercase;
   background-color: #ee3643;
   border: none;
 }
 
 .main-header {
   width: 100%;
-  margin-bottom: 21px;
+  margin-bottom: 25px;
   padding-bottom: 60px;
   background-color: #f3f7f8;
 }
@@ -36,16 +59,15 @@ a {
 
 .header-row-wrapper {
   display: flex;
+  flex-wrap: wrap;
   width: 940px;
   margin: 0 auto;
   padding: 0;
 }
 
-
 .logo {
-  width: 220px;
+  display: inline-block;
   margin: 0;
-  padding: 9px 55px;
   text-transform: uppercase;
   text-align: center;
   background-color: #ee3643;
@@ -53,20 +75,44 @@ a {
 }
 
 .header-logo-link {
+  display: block;
+  padding: 10px 55px 8px;
   font-size: 24px;
   line-height: 24px;
   color: #ffffff;
 }
 
 .search {
+  position: relative;
   width: 270px;
   margin: 0;
+  background-color: #212a3a;
+  /*outline: 2px solid yellow;*/
+}
+
+.search::before {
+  position: absolute;
+  content: "";
+  width: 17px;
+  height: 17px;
+  top: 12px;
+  left: 17px;
+  background-image: url("img/icon-search.svg") no-repeat;
+
+  background-color: yellow;
 }
 
 .input-search {
-  background-color: #293449;
+  background-color: inherit;
   border: none;
 }
+
+/*у placeholder смогла поменять только цвет и боковые отступы*/
+
+::-webkit-input-placeholder { color: #ffffff; padding: 13px 47px;}
+::-moz-placeholder          { color: #ffffff; padding: 13px 47px;} /*Firefox 19+*/
+:-moz-placeholder           { color: #ffffff; padding: 13px 47px;} /*Firefox 18-*/
+:-ms-input-placeholder      { color: #ffffff; padding: 13px 47px;}
 
 .header-top {
   display: flex;
@@ -78,52 +124,117 @@ a {
 
 .header-top li {
   width: 150px;
+  padding: 0;
 }
 
 .header-top a {
+  display: block;
+  padding: 12px;
+  vertical-align: middle;
   color: #ffffff;
 }
 
-.button-order {
-  width: 150px;
-  margin: 0;
-  background-color: #63a63e;
+.header-top .bookmarks {
+  position: relative;
+  padding-right: 27px;
+  padding-left: 43px;
+  /*outline: 2px solid orange;*/
 }
 
-.header-content {
-  background-color: #f3f7f9;
+.header-top .cart {
+  position: relative;
+  padding-right: 25px;
+  padding-left: 46px;
+  /*outline: 2px solid green;*/
+}
+
+.header-top .cart-full {
+  background-color: #ee3643;
+}
+
+.header-top .bookmarks::before,
+.header-top .cart::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  width: 16px;
+  height: 16px;
+}
+
+.header-top .bookmarks::before {
+  background-image: url("img/icon-bookmark.svg") no-repeat 0 0;
+
+  background-color: yellow;
+}
+
+.header-top .cart::before {
+  background: url("img\icon-cart.svg") no-repeat 0 0;
+
+  background-color: yellow;
+}
+
+.button-order {
+  display: block;
+  margin: 0;
+  padding: 12px 22px 12px 20px;
+  font-size: 17px;
+  text-transform: inherit;
+  background-color: #63a63e;
 }
 
 .header-content-wrapper {
   display: flex;
+  justify-content: flex-end;
   width: 940px;
-  margin: 0 auto 45px;
+  margin: 0 auto 32px;
   padding: 0;
 }
 
-.header-content-wrapper h3 {
+.header-content-wrapper h3 {  /*текст не правильно переносится со второй на третью строчку*/
   font-size: 16px;
   line-height: 23px;
   font-style: italic;
   color: #ee3643;
-  width: 220px;
+  margin: 0;
   margin-left: 50px;
+  padding-top: 5px;
+  padding-left: 2px;
+  padding-right: 0;
+  /*outline: 2px solid yellow;*/
 }
 
 .header-address {
-  width: 270px;
-  margin-right: auto;
+  position: relative;
   margin-left: 50px;
+  /* outline: 2px solid green;*/
 }
 
-.header-address a {
+.header-address .phone {
+  display: block;
+  padding: 10px 50px 8px 69px;
   font-size: 21px;
   line-height: 21px;
+  white-space: nowrap;
   color: #ee3643;
   border: 4px solid #ffffff;
 }
 
+.header-address .phone::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  width: 21px;
+  height: 21px;
+  background: url("img/icon-phone.svg") no-repeat;
+
+  background-color: red;
+}
+
 .header-address .address {
+  display: block;
+  padding: 5px;
   font-size: 14px;
   line-height: 24px;
   color: #32425c;
@@ -133,34 +244,112 @@ a {
 .user-navigation,
 .header-site-navigation {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .initial-user-navigation {
-  width: 282px;
+  display: flex;
+  align-items: flex-start;
+  margin-left: 65px;
+  /*outline: 2px solid green;*/
 }
 
-.initial-login-link {
+.initial-user-navigation li {
+  margin: 0;
+  padding: 0;
   background-color: #ffffff;
 }
 
-.initial-login-link a {
+.initial-user-navigation li:last-child {
+  margin-left: 10px;
+}
+
+.initial-login-link {
+  display: block;
+  padding: 13px 25px;
   font-size: 21px;
   line-height: 21px;
   color: #000000;
 }
 
-.user a {
+.link-login {
+  padding-left: 47px;
+}
+
+.user {
+  margin-left: 50px;
+}
+
+.user-profile {
+  display: block;
+  position: relative;
+  padding: 12px 67px 12px 45px;
   font-size: 21px;
   line-height: 21px;
-  text-align: center;
   color: #32425c;
+  white-space: nowrap;
   background-color: #ffffff;
 }
 
+.user-profile::before,
+.user-profile::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 18px;
+}
+
+.user-profile::before {
+  top: 14px;
+  left: 11px;
+  background: url("img/icon-user.svg") no-repeat;
+
+  background-color: red;
+}
+
+.user-profile::after {
+  top: 14px;
+  right: 11px;
+  background: url("img/icon-user.svg") no-repeat;
+
+  background-color: red;
+}
+
+.user-navigation {
+ margin: 10px 0;
+ /*outline: 2px solid green;*/
+}
+
+.user-navigation li {
+  display: inline-block;
+}
+
 .login-link a {
+  display: block;
   font-size: 16px;
   color: #32425c;
   text-decoration: underline;
+}
+
+.login-link .my-orders {
+  padding-left: 17px;
+}
+
+.login-link .my-account {
+  position: relative;
+  padding-left: 30px;
+}
+
+.login-link .my-account::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #3f4e66;
 }
 
 .header-nav {
@@ -173,12 +362,13 @@ a {
 .header-site-navigation {
   display: flex;
   justify-content: space-around;
-  width: 940px;
-  margin: 0 auto;
+  margin: 0 20px;
   padding: 0;
 }
 
 .header-site-navigation a {
+  display: block;
+  padding: 19px;
   line-height: 17px;
   color: #ffffff;
 }
@@ -190,10 +380,21 @@ a {
 }
 
 .breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
   margin: 0;
   margin-bottom: 22px;
   padding: 0;
   list-style: none;
+  /*outline: 2px solid yellow;*/
+}
+
+.breadcrumbs li {
+  position: relative;
+  margin-right: 40px;
+  /*outline: 2px solid orange;*/
 }
 
 .breadcrumbs a,
@@ -201,7 +402,27 @@ a {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: normal;
+  text-transform: uppercase;
   color: #000000;
+}
+
+.breadcrumbs li:first-child {
+  width: 13px;
+  height: 13px;
+  background-image: url("img/icon-home.svg");
+
+  background-color: red;
+}
+
+.breadcrumbs li::after {    /*можно ли использовать :not(:last-child) или нужно всем li задать классы?*/
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 13px;
+  top: 3px;     /*стрелочка первого элемента по другому расположена, ей нужно отдельно задать координаты или у меня не так сделано?*/
+  right: -28px;
+  background-color: yellow;
+  background-image: url("img/icon-right-small.svg");
 }
 
 .page-title {
@@ -209,6 +430,7 @@ a {
   padding: 30px 28px;
   font-size: 30px;
   line-height: 30px;
+  text-transform: uppercase;
   color: #32425c;
   background-color: #f2f6f8;
 }
@@ -216,6 +438,7 @@ a {
 .catalog-columns {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .filters {
@@ -225,32 +448,101 @@ a {
 }
 
 .filters h2 {
+  margin: 0;
+  margin-right: 20px;
+  padding: 8px 150px 12px 17px;
   font-size: 13px;
+  background-color: #f7f3ec;
+}
+
+.price-filter {
+  width: 220px;
+  height: 208px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #e5e5e5;   /*как эту рамку сделать не здесь нижней, а верхней у brands и power-supply?*/
+  /*outline: 2px solid green;*/
 }
 
 .brands,
 .power-supply {
+  margin: 0;
+  padding: 0;
   border: none;
+  /*outline: 2px solid orange;*/
+}
+
+.brands {
+  border-bottom: 1px solid #e5e5e5; /*не получается вместо этого сделать border-top у следующего блока*/
+  /*outline: 2px solid green;*/
 }
 
 .brands legend,
-.power-supply legend {
+.power-supply legend,
+.price-filter span {
+  display: block;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  padding-bottom: 13px;
   font-weight: bold;
   line-height: 30px;
+  /*outline: 2px solid orange;*/
+}
+
+.price-filter span {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .filter .catalog-filter {
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+
+.brand-item,
+.power-supply-item {
+  position: relative;
+  margin: 0;
+}
+
+.brand-item::before,
+.power-supply-item::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  /* top: 30;   /*не меняется расположение, почему?*/
+  left: 10;
+  background-color: red;
+}
+
+.brand-item::before {
+  background-image: url("img/checkbox-on.svg");
+}
+
+.power-supply-item::before {    /*где-то в курсах было как делать такую радиокнопку, пока не могу найти, может быть ты поскажешь, где посмотреть?*/
+  border-radius: 50%;
+  background-color: #c5c5c5;
+
 }
 
 .brand-item label,
 .power-supply-item label {
+  display: block;
+  padding-bottom: 20px;
+  padding-left: 30px;
   font-size: 15px;
   font-weight: normal;
   line-height: 20px;
 }
 
 .filter-button {
+  display: block;
+  margin-top: 65px;
+  padding: 13px 37px;
   font-size: 13px;
   text-transform: uppercase;
   background-color: #ffffff;
@@ -259,7 +551,23 @@ a {
 
 .catalog {
   width: 700px;
+  margin: 0;
   padding: 0;
+}
+
+.sorting {
+  width: 700px;
+  height: 37px;
+  margin-bottom: 20px;
+  background-color: #f7f3ec;
+}
+
+.sorting h2 {
+  margin: 0;
+  padding: 7px 150px 10px 17px;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
 }
 
 .catalog-list {
@@ -272,11 +580,14 @@ a {
 }
 
 .catalog-item {
+  position: relative;
+  display: inline-block;
   width: 220px;
-  height: 318px;
   margin: 0;
   margin-right: 17px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
   border: 1px solid #e5e5e5;
 }
 
@@ -284,24 +595,77 @@ a {
   margin-right: 0;
 }
 
-.catalog-item h3 {
-  font-weight: bold;
-  text-align: center;
-  color: #000000;
+.catalog-item:nth-child(3n) .item-price {
+  margin-top: 40px;
 }
 
-.item-price {
-  font-size: 17px;
-  font-weight: bold;
+.catalog-item .actions {
+  display: none;
+}
+.catalog-item:hover .actions {
+  display: block;
 }
 
-.item-price del {
-  color: #999999;
+.catalog-item .flag{
+  position:absolute;
+  top:-1px;
+  right:-1px;
+  width:60px;
+  height:60px;
+  text-indent:-1000px; /*зачем?*/
+  overflow:hidden;
+  z-index:20;
+
+  background-color: red;
+}
+
+.catalog-item .flag-new{
+ background: url("img/new-flag.png") no-repeat 0 0;
+}
+
+.catalog-item img {  /*не уверена в размере картинок, в демке ширина картинок во всю ширину карточки, я выравниваю  в каждом столбике отдельно.. */
+  width: 127px;
+  height: 115px;
+  margin: 25px 53px 25px 40px;
+  padding: 0;
+  /*outline: 2px solid orange;*/
+}
+
+.catalog-item:nth-child(3n-1) img {
+  width: 145px;
+  height: 125px;
+  margin-top: 20px;
+  margin-left: 27px;
+  margin-bottom: 20px;
+}
+
+.catalog-item:nth-child(3n) img {
+  margin-left: 30px;
+}
+
+.catalog-item .actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 218px;
+  height: 88px;
+  padding: 40px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+}
+
+.actions a {
+  display: block;
+  margin: 10px 40px;
+  margin-bottom: 7px;
+  border-radius: 3px;
+  padding: 7px 0;
 }
 
 .btn-buy {
+  padding: 10px 35px;
   background-color: #63a63e;
-  box-shadow: 0 5px 0 0 #367315;
+  box-shadow: 0 5px 0 0 #367315; /*можно оставить тень или лучше сделать как в демке нижнюю рамку?*/
 }
 
 .btn-mark {
@@ -310,52 +674,169 @@ a {
   border: 2px solid #63a63e;
 }
 
+.catalog-item h3 {
+  min-height: 40px;
+  margin: 10px auto;
+  padding: 0 30px;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.item-price,
+.item-price-last {
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.item-price-last { /*del можно оставить или лучше text-decoration сделать?*/
+  color: #999999;
+}
+
+.item-price {
+  position:relative;
+  width:80px;
+  margin: 10px auto;
+  margin-top: 11px;
+  margin-bottom: 20px;
+  padding: 10px 30px;
+  border-radius: 3px;
+}
+
+.item-price:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border: 20px solid #ffffff;
+  border-left-color: #ee3643;
+}
+
 .about-us {
   display: flex;
   justify-content: space-between;
   width: 940px;
-  margin: 0 auto;
+  margin: 65px auto 0;
   padding: 0;
+  /*outline: 2px solid yellow;*/
 }
 
 .company {
-  width: 530px;
+  width: 540px;
   margin: 0;
+  margin-right: 100px;
+  padding: 0;
+  padding-top: 15px;
+  /*outline: 2px solid green;*/
 }
 
 .contacts {
   width: 300px;
   margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  /*outline: 2px solid blue;*/
 }
 
-.company h2,
+.company h2,  /*не получается подобрать межбуквенное расстояние. Или это разница в отображении шрифтов?*/
 .contacts h2 {
+  display: block;
+  margin: 0;
+  margin-bottom: 25px;
   font-size: 30px;
   line-height: 30px;
+  text-transform: uppercase;
+  /*outline: 2px solid green;*/
 }
 
 .company p,
 .contacts p {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
+  /*outline: 2px solid orange;*/
 }
 
-.partners li {
+
+.company .delivery {
+  margin-right: 150px;
+  margin-bottom: 20px;
+}
+
+.partners-list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.partner {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  padding-left: 35px;
   font-size: 18px;
   line-height: 20px;
   list-style: none;
 }
 
+.partner:last-child {
+  margin-bottom: 0;
+}
+
+.partner::before {
+  position: absolute;
+  content: "";
+  width: 26px;
+  height: 2px;
+  background-color: #ee3643;
+  top: 10px;
+  left: 0;
+}
+
+.partner:nth-child(2)::before {
+  top: 50px;
+}
+
+.partner:last-child::before {
+  top: 88px;
+}
+
+.contacts p {
+  margin-right: 115px;
+  margin-bottom: 30px;
+}
+
 .contacts img {
+  width: 300px;
+  height: 160px;
   background-color: #eeeae3;
 }
 
+.company .button,
+.contacts .button {
+  display: block;
+  margin-top: 35px;
+  margin-bottom: 0;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.company .button {
+  display: inline-block;
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
 .main-footer {
   width: 100%;
   margin: 0;
-  margin-top: 80px;
+  margin-top: 85px;
 }
 
 .footer-title {
@@ -372,71 +853,51 @@ a {
 }
 
 .footer-column {
-  display: flex;
-  flex-direction: column;
   padding: 0;
   padding-bottom: 50px;
 }
 
-.footer-column:first-child {
-  justify-content: space-between;
-}
-
-.footer-column .site-navigation,
-.footer-column .goods-list {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 0;
-}
-
-.footer-column .site-navigation li,
-.footer-column .goods-list li {
-  margin: 0;
-  margin-left: 55px;
-}
-
 .footer-logo-link {
+  display: block;
+  padding: 17px 41px;
   font-size: 30px;
   line-height: 30px;
   color: #ffffff;
 }
 
-.footer-site-navigation a,
-.footer-address {
+.footer-address,
+.footer-site-navigation a {
   font-size: 18px;
   line-height: 24px;
   color: #ffffff;
 }
 
 .footer-address {
+  margin-top: 31px;
   width: 340px;
-  margin-top: 30px;
+  padding: 0;
+  padding-left: 2px;
   font-style: inherit;
+  /*outline: 2px solid red;*/
 }
 
 .footer-site-navigation,
 .goods-list {
   display: flex;
   justify-content: flex-end;
-  margin-right: 0;
-  list-style: none;
-}
-
-.footer-site-navigation {
   width: 560px;
+  margin: 0;
   margin-top: 38px;
-}
-
-.goods-list {
-  width: 530px;
-  margin-top: 38px;
-  margin-right: 0; /*не работает!*/
+  padding: 0;
+  list-style: none;
+  /*outline: 2px solid yellow;*/
 }
 
 .footer-site-navigation li,
 .goods-list li {
   margin: 0;
   margin-left: 55px;
+  /*outline: 2px solid white;*/
 }
 
 .goods-list a {
@@ -445,6 +906,8 @@ a {
 
 .page-info {
   width: 100%;
+  padding-top: 40px;
+  padding-bottom: 30px;
   font-size: 16px;
   background-color: #293449;
 }
@@ -453,7 +916,7 @@ a {
   display: flex;
   width: 940px;
   margin: 0 auto;
-  padding: 0;
+  /*outline: 2px solid yellow;*/
 }
 
 .copyright,
@@ -462,40 +925,69 @@ a {
 }
 
 .copyright {
-  width: 230px;
-  margin-right: 150px;
+  width: 250px;
+  margin: 0;
+  margin-right: 145px;
+  /*outline: 2px solid orange;*/
 }
 
 .page-info ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .social {
+  display: flex;
+  justify-content: space-between;
   width: 135px;
-  margin-right: 115px;
+  /*outline: 2px solid green;*/
 }
 
-.social a {
-  color: #ffffff;
+.social li {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #212a3a;
+  /*outline: 2px solid white;*/
 }
 
-.feedback {
+.social li:first-child {
+  background-image: url("img/icon-vk.svg");
+}
+
+.social li:nth-child(2) {
+  background-image: url("img/icon-fb.svg");
+}
+
+.social li:last-child {
+  background-image: url("img/icon-insta.svg");
+}
+
+.feedback {  /*не получается сдвинуть блок вправо*/
+  display: flex;
+  justify-content: space-between;
   width: 300px;
+  margin-left: 115px;  /*не работает!!!*/
+  /*outline: 2px solid red;*/
 }
 
 .feedback a {
   color: #ffd180;
 }
 
+
+/*Модальные окна пока не сделаны
+
 .modal-map img {
   background-color: #565656;
-  /*box-shadow: 0 0 30px 10px #565656; пока не сделано */
+  box-shadow: 0 0 30px 10px #565656;
 }
 
 .modal,
 .modal-cart {
   box-shadow: 0 -5px #ee3643;
-  /* 0 15px 15px 10px,  пока не получилось */
+
 }
 
 .modal label {
@@ -524,4 +1016,4 @@ a {
 .more-shopping {
   color: #000000;
   background-color: #ffffff;
-}
+}*/
