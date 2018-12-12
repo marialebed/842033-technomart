@@ -15,7 +15,7 @@
             <a class="header-logo-link" aria-label="Логотип компании Техномарт">Техномарт</a>
           </div>
           <div class="search">
-            <form action="https://echo.htmlacademy.ru" method="post">
+            <form class="form-search" action="https://echo.htmlacademy.ru" method="post">
               <label class="visually-hidden" for="search" >Поиск</label>
               <input class="input-search" type="search" name="search" id="search" placeholder="Поиск:">
               <button class="visually-hidden" type="submit">Искать</button>
@@ -23,10 +23,10 @@
           </div>
           <ul class="header-top">
             <li>
-              <a  class="bookmarks" href="#">Закладки: 0</a>
+              <a  class="purchase bookmarks" href="#">Закладки: 0</a>
             </li>
             <li>
-              <a  class="cart" href="#">Корзина: 0</a>
+              <a  class="purchase cart" href="#">Корзина: 0</a>
             </li>
           </ul>
           <a class="button button-order" href="#">Оформить заказ</a>
@@ -34,13 +34,13 @@
       </section>
       <section class="header-content">
         <div class="header-content-wrapper">
-          <h3>Интернет-магазин строительных материалов и инструментов для ремонта</h3>
+          <h3>Интернет-магазин строительных материалов и&nbsp;инструментов для ремонта</h3>
           <div class="header-address">
             <a class="phone" href="tel:88125550555" aria-label="Телефон компании Техномарт">+7 (812) 555-05-55</a>
             <span class="address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</span>
           </div>
           <ul class="initial-user-navigation">
-            <li><a class="initial-login-link link-login" href="#">Войти</a></li>
+            <li><a class="initial-login-link enter" href="#">Войти</a></li>
             <li><a class="initial-login-link" href="#">Регистрация</a></li>
           </ul>
         </div>
@@ -115,7 +115,7 @@
         <div class="page-info-wrapper">
           <p class="copyright">
             &copy; 2010–2017 Компания «Техномарт»
-            Все права защищены
+            Все&nbsp;права защищены
           </p>
           <ul class="social">
             <li><a href="https://vk.com/" aria-label="Техномарт ВКонтакте"><span class="visually-hidden">ВКонтакте</span></a></li>
@@ -154,11 +154,9 @@
         </p>
         <p class="user-letter">
           <label for="user-letter">Текст письма:</label>
-          <textarea class="field-form" id="user-letter" name="letter" placeholder="В свободной форме"></textarea>
+          <textarea id="user-letter" name="letter" placeholder="В свободной форме"></textarea>
         </p>
-        <div class="modal-button-wrap">
-          <button class="button" type="submit">Отправить</button>
-        </div>
+        <button class="button" type="submit">Отправить</button>
       </form>
       <button class="modal-close" type="button">Закрыть</button>
     </section>

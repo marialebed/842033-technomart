@@ -8,8 +8,6 @@ body {
   background-color: #ffffff;
 }
 
-/*не могу вставить картинки svg и png! чтобы проверить расположение вместо них везде сделала просто цветной фон*/
-
 a {
   text-decoration: none;
 }
@@ -35,9 +33,11 @@ input[type="radio"].visually-hidden {
 }
 
 .button {
+  display: inline-block;
   font-size: 14px;
   text-align: center;
   color: #ffffff;
+  vertical-align: middle;
   text-transform: uppercase;
   background-color: #ee3643;
   border: none;
@@ -66,7 +66,6 @@ input[type="radio"].visually-hidden {
 }
 
 .logo {
-  display: inline-block;
   margin: 0;
   text-transform: uppercase;
   text-align: center;
@@ -76,10 +75,21 @@ input[type="radio"].visually-hidden {
 
 .header-logo-link {
   display: block;
-  padding: 10px 55px 8px;
+  width: 220px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
   font-size: 24px;
   line-height: 24px;
   color: #ffffff;
+}
+
+.logo:hover {
+  background-color: #ca2c37;
+}
+
+.logo:active{
+  background-color: #ba2732;
 }
 
 .search {
@@ -87,7 +97,6 @@ input[type="radio"].visually-hidden {
   width: 270px;
   margin: 0;
   background-color: #212a3a;
-  /*outline: 2px solid yellow;*/
 }
 
 .search::before {
@@ -97,22 +106,46 @@ input[type="radio"].visually-hidden {
   height: 17px;
   top: 12px;
   left: 17px;
-  background-image: url("img/icon-search.svg") no-repeat;
+  background: url("../img/icon-search.svg") no-repeat 0 0;
+}
 
-  background-color: yellow;
+.search:hover::before {
+  opacity: 1;
+}
+
+.search:active::before {
+  opacity: 0.5;
+}
+
+.search:focus::before {
+  opacity: 1;
 }
 
 .input-search {
+  width: 270px;
+  margin: 0;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 50px;
   background-color: inherit;
   border: none;
 }
 
-/*у placeholder смогла поменять только цвет и боковые отступы*/
+.input-search:hover {
+  background-color: #212a3a;
+}
 
-.input-search ::-webkit-input-placeholder { color: #ffffff; padding: 13px 47px;}
-.input-search ::-moz-placeholder          { color: #ffffff; padding: 13px 47px;} /*Firefox 19+*/
-.input-search :-moz-placeholder           { color: #ffffff; padding: 13px 47px;} /*Firefox 18-*/
-.input-search :-ms-input-placeholder      { color: #ffffff; padding: 13px 47px;}
+.input-search:active {
+  background-color: #293449;
+}
+
+.input-search:focus {
+  background-color: #ffffff;
+}
+
+.form-search input[placeholder] {  /* не работает*/
+  color: #ffffff;
+}
 
 .header-top {
   display: flex;
@@ -127,51 +160,61 @@ input[type="radio"].visually-hidden {
   padding: 0;
 }
 
-.header-top a {
+.purchase {
   display: block;
   padding: 12px;
-  vertical-align: middle;
   color: #ffffff;
 }
 
-.header-top .bookmarks {
+.purchase:hover {
+  background-color: #212a3a;
+}
+
+.purchase:active {
+  background-color: #161d29;
+  opacity: 0.6;
+}
+
+.purchase.bookmarks {
   position: relative;
   padding-right: 27px;
   padding-left: 43px;
-  /*outline: 2px solid orange;*/
 }
 
-.header-top .cart {
+.purchase.cart {
   position: relative;
   padding-right: 25px;
   padding-left: 46px;
-  /*outline: 2px solid green;*/
 }
 
-.header-top .cart-full {
+.purchase.cart-full {
   background-color: #ee3643;
 }
 
-.header-top .bookmarks::before,
-.header-top .cart::before {
+.purchase::before {
   content: "";
   position: absolute;
   top: 12px;
   left: 17px;
   width: 16px;
   height: 16px;
+  opacity: 0.3;
 }
 
-.header-top .bookmarks::before {
-  background-image: url("img/icon-bookmark.svg") no-repeat 0 0;
-
-  background-color: yellow;
+.purchase:hover::before {
+  opacity: 1;
 }
 
-.header-top .cart::before {
-  background: url("img\icon-cart.svg") no-repeat 0 0;
+.purchase:active::before {
+  opacity: 0.5;
+}
 
-  background-color: yellow;
+.bookmarks::before {
+  background: url("../img/icon-bookmark.svg") no-repeat 0 0;
+}
+
+.cart::before {
+  background: url("../img/icon-cart.svg") no-repeat 0 0;
 }
 
 .button-order {
@@ -183,6 +226,15 @@ input[type="radio"].visually-hidden {
   background-color: #63a63e;
 }
 
+.button-order:hover {
+  background-color: #5fbb2d;
+}
+
+.button-order:active {
+  background-color: #518534;
+  opacity: 0.5;
+}
+
 .header-content-wrapper {
   display: flex;
   justify-content: flex-end;
@@ -191,33 +243,33 @@ input[type="radio"].visually-hidden {
   padding: 0;
 }
 
-.header-content-wrapper h3 {  /*текст не правильно переносится со второй на третью строчку*/
+.header-content-wrapper h3 {
   font-size: 16px;
   line-height: 23px;
   font-style: italic;
   color: #ee3643;
   margin: 0;
   margin-left: 50px;
-  padding-top: 5px;
-  padding-left: 2px;
-  padding-right: 0;
-  /*outline: 2px solid yellow;*/
+  padding: 5px 2px;
 }
 
 .header-address {
   position: relative;
   margin-left: 50px;
-  /* outline: 2px solid green;*/
 }
 
 .header-address .phone {
   display: block;
-  padding: 10px 50px 8px 69px;
+  box-sizing: border-box;
+  width: 270px;
+  padding-top: 12px;
+  padding-bottom: 8px;
+  padding-left: 67px;
   font-size: 21px;
   line-height: 21px;
   white-space: nowrap;
   color: #ee3643;
-  border: 4px solid #ffffff;
+  border: 3px solid #ffffff;
 }
 
 .header-address .phone::before {
@@ -227,9 +279,7 @@ input[type="radio"].visually-hidden {
   left: 10px;
   width: 21px;
   height: 21px;
-  background: url("img/icon-phone.svg") no-repeat;
-
-  background-color: red;
+  background: url("../img/icon-phone.svg") no-repeat 0 0;
 }
 
 .header-address .address {
@@ -252,7 +302,6 @@ input[type="radio"].visually-hidden {
   display: flex;
   align-items: flex-start;
   margin-left: 65px;
-  /*outline: 2px solid green;*/
 }
 
 .initial-user-navigation li {
@@ -273,8 +322,36 @@ input[type="radio"].visually-hidden {
   color: #000000;
 }
 
-.link-login {
+.initial-login-link:hover {
+  color: #ee3643;
+}
+
+.initial-login-link:active {
+  opacity: 0.3;
+}
+
+.enter {
+  position: relative;
   padding-left: 47px;
+}
+
+.enter::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  width: 22px;
+  height: 20px;
+  opacity: 0.5;
+  background: url("../img/icon-login.svg") no-repeat 0 0;
+}
+
+.enter:hover::before {
+  opacity: 1;
+}
+
+.enter:active::before {
+  opacity: 0.5;
 }
 
 .user {
@@ -292,33 +369,43 @@ input[type="radio"].visually-hidden {
   background-color: #ffffff;
 }
 
+.user-profile:active {
+  opacity: 0.3;
+}
+
 .user-profile::before,
 .user-profile::after {
   content: "";
   position: absolute;
   width: 20px;
   height: 18px;
+  opacity: 0.5;
 }
 
 .user-profile::before {
   top: 14px;
   left: 11px;
-  background: url("img/icon-user.svg") no-repeat;
-
-  background-color: red;
+  background: url("../img/icon-user.svg") no-repeat 0 0;
 }
 
 .user-profile::after {
   top: 14px;
   right: 11px;
-  background: url("img/icon-user.svg") no-repeat;
+  background: url("../img/icon-logout.svg") no-repeat 0 0;
+}
 
-  background-color: red;
+.user-profile:hover::before,
+.user-profile:hover::after {
+  opacity: 1;
+}
+
+.user-profile:active::before,
+.user-profile:active::after {
+  opacity: 0.5;
 }
 
 .user-navigation {
  margin: 10px 0;
- /*outline: 2px solid green;*/
 }
 
 .user-navigation li {
@@ -330,6 +417,14 @@ input[type="radio"].visually-hidden {
   font-size: 16px;
   color: #32425c;
   text-decoration: underline;
+}
+
+.login-link a:hover {
+  color: #ee3643;
+}
+
+.login-link a:active {
+  opacity: 0.3;
 }
 
 .login-link .my-orders {
@@ -373,6 +468,15 @@ input[type="radio"].visually-hidden {
   color: #ffffff;
 }
 
+.header-site-navigation a:hover {
+  background-color: #293449;
+}
+
+.header-site-navigation a:active {
+  background-color: #1d2739;
+  opacity: 0.5;
+}
+
 .inner-container {
   width: 940px;
   margin: 0 auto;
@@ -382,19 +486,16 @@ input[type="radio"].visually-hidden {
 .breadcrumbs {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   flex-wrap: wrap;
   margin: 0;
-  margin-bottom: 22px;
+  margin-bottom: 23px;
   padding: 0;
   list-style: none;
-  /*outline: 2px solid yellow;*/
 }
 
 .breadcrumbs li {
   position: relative;
   margin-right: 40px;
-  /*outline: 2px solid orange;*/
 }
 
 .breadcrumbs li:last-child {
@@ -413,19 +514,18 @@ input[type="radio"].visually-hidden {
 .breadcrumbs li:first-child {
   width: 13px;
   height: 13px;
-  background-image: url("img/icon-home.svg");
-
-  background-color: red;
+  background: url("../img/icon-home.svg") no-repeat 0 0;
 }
 
 .breadcrumbs li::after {
+  content: "";
   position: absolute;
   width: 9px;
   height: 13px;
   top: 3px;     /*стрелочка первого элемента по другому расположена, ей нужно отдельно задать координаты или у меня не так сделано?*/
   right: -28px;
   background-color: yellow;
-  background-image: url("img/icon-right-small.svg");
+  background: url("../img/icon-right-small.svg") no-repeat 0 0;
 }
 
 .breadcrumbs-current::after {
@@ -446,18 +546,21 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  font-family: "PT Sans", Arial, sans-serif;
 }
 
 .filters {
   width: 220px;
-  font-family: "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
 }
 
-.filters h2 {
+.filters h2 {    /*маргин вправо не делается*/
+  width: 220px;
   margin: 0;
   margin-right: 20px;
-  padding: 8px 150px 12px 17px;
+  padding-top: 6px;
+  padding-bottom: 12px;
+  padding-left: 17px;
   font-size: 13px;
   background-color: #f7f3ec;
 }
@@ -467,8 +570,7 @@ input[type="radio"].visually-hidden {
   height: 208px;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #e5e5e5;   /*как эту рамку сделать не здесь нижней, а верхней у brands и power-supply?*/
-  /*outline: 2px solid green;*/
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .brands,
@@ -477,12 +579,10 @@ input[type="radio"].visually-hidden {
   margin-bottom: 5px;
   padding: 0;
   border: none;
-  /*outline: 2px solid orange;*/
 }
 
 .brands {
-  border-bottom: 1px solid #e5e5e5; /*не получается вместо этого сделать border-top у следующего блока*/
-  /*outline: 2px solid green;*/
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .brands legend,
@@ -495,7 +595,6 @@ input[type="radio"].visually-hidden {
   padding-bottom: 13px;
   font-weight: bold;
   line-height: 30px;
-  /*outline: 2px solid orange;*/
 }
 
 .price-filter span {
@@ -522,26 +621,26 @@ input[type="radio"].visually-hidden {
   position: absolute;
   width: 26px;
   height: 26px;
-  /* top: 30;   /*не меняется расположение, почему?*/
-  left: 10;
-  background-color: red;
+  top: 0;
+  left: 0;
 }
 
 .brand-item::before {
-  background-image: url("img/checkbox-on.svg");
+  background: url("../img/checkbox-on.svg") no-repeat 0 0;
 }
 
-.power-supply-item::before {    /*где-то в курсах было как делать такую радиокнопку, пока не могу найти, может быть ты поскажешь, где посмотреть?*/
+.power-supply-item::before {
+  top: -2px;
+  left: -3px;
   border-radius: 50%;
   background-color: #c5c5c5;
-
 }
 
 .brand-item label,
 .power-supply-item label {
   display: block;
   padding-bottom: 20px;
-  padding-left: 35px;
+  padding-left: 33px;
   font-size: 15px;
   font-weight: normal;
   line-height: 20px;
@@ -549,7 +648,7 @@ input[type="radio"].visually-hidden {
 
 .filter-button {
   display: block;
-  margin-top: 55px;
+  margin-top: 60px;
   padding: 10px 35px;
   font-size: 13px;
   text-transform: uppercase;
@@ -565,15 +664,15 @@ input[type="radio"].visually-hidden {
 
 .sorting {
   width: 700px;
-  height: 37px;
   margin-bottom: 20px;
   background-color: #f7f3ec;
 }
 
 .sorting h2 {
   margin: 0;
-  padding: 7px 150px 10px 17px;
-  font-family: "PT Sans", Arial, sans-serif;
+  padding-top: 6px;
+  padding-bottom: 12px;
+  padding-left: 17px;
   font-size: 13px;
   text-transform: uppercase;
 }
@@ -583,16 +682,16 @@ input[type="radio"].visually-hidden {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  font-family: "PT Sans", Arial, sans-serif;
   list-style: none;
 }
 
+/*не получается расположить картинки как на макете*/
+
 .catalog-item {
   position: relative;
-  display: inline-block;
-  width: 220px;
+  width: 217px;
   margin: 0;
-  margin-right: 17px;
+  margin-right: 20px;
   margin-bottom: 20px;
   font-weight: bold;
   text-align: center;
@@ -610,41 +709,44 @@ input[type="radio"].visually-hidden {
 .catalog-item .actions {
   display: none;
 }
+
+.catalog-item:hover {
+  box-shadow: 0 10px 15px 5px rgba(86, 86, 86, 0.4);
+}
+
 .catalog-item:hover .actions {
   display: block;
 }
 
 .catalog-item .flag{
-  position:absolute;
-  top:-1px;
-  right:-1px;
-  width:60px;
-  height:60px;
-  text-indent:-1000px; /*зачем?*/
-  overflow:hidden;
-  z-index:20;
-
-  background-color: red;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 60px;
+  height: 60px;
+  text-indent: -1000px;
+  overflow: hidden;
+  z-index: 20;
 }
 
-.catalog-item .flag-new{
+.catalog-item .flag-new {
  background: url("img/new-flag.png") no-repeat 0 0;
 }
 
-.catalog-item img {  /*не уверена в размере картинок, в демке ширина картинок во всю ширину карточки, я выравниваю  в каждом столбике отдельно.. */
-  width: 127px;
-  height: 115px;
-  margin: 25px 53px 25px 40px;
-  padding: 0;
-  /*outline: 2px solid orange;*/
+.image {
+  display: flex;
+  width: 217px;
+  max-height: 170px;
+  margin-bottom: 0;
+}
+
+.catalog-item img {
+  margin: 30px auto;
 }
 
 .catalog-item:nth-child(3n-1) img {
   width: 145px;
   height: 125px;
-  margin-top: 20px;
-  margin-left: 27px;
-  margin-bottom: 20px;
 }
 
 .catalog-item:nth-child(3n) img {
@@ -655,7 +757,7 @@ input[type="radio"].visually-hidden {
   position: absolute;
   top: 0;
   left: 0;
-  width: 218px;
+  width: 100%;
   height: 88px;
   padding: 40px 0;
   background-color: rgba(255, 255, 255, 0.9);
@@ -673,18 +775,36 @@ input[type="radio"].visually-hidden {
 .btn-buy {
   padding: 10px 35px;
   background-color: #63a63e;
-  box-shadow: 0 5px 0 0 #367315; /*можно оставить тень или лучше сделать как в демке нижнюю рамку?*/
+  box-shadow: 0 5px 0 0 #367315;
+}
+
+.btn-buy:hover {
+  background-color: #5fbb2d;
+}
+
+.btn-buy:active {
+  background-color: #518534;
+  box-shadow: none;
 }
 
 .btn-mark {
-  color: #63a63e;
+  color: #32425c;
   background-color: #ffffff;
   border: 2px solid #63a63e;
 }
 
+.btn-mark:hover {
+  border: 2px solid #32425c;
+}
+
+.btn-mark:active {
+  opacity: 0.3;
+  border: 2px solid #c1c6ce;
+}
+
 .catalog-item h3 {
   min-height: 40px;
-  margin: 10px auto;
+  margin: 5px auto 15px;
   padding: 0 30px;
   font-size: 18px;
   line-height: 20px;
@@ -698,13 +818,13 @@ input[type="radio"].visually-hidden {
   font-weight: bold;
 }
 
-.item-price-last { /*del можно оставить или лучше text-decoration сделать?*/
+.item-price-last {
   color: #999999;
 }
 
 .item-price {
-  position:relative;
-  width:80px;
+  position: relative;
+  width: 80px;
   margin: 10px auto;
   margin-top: 11px;
   margin-bottom: 20px;
@@ -729,7 +849,6 @@ input[type="radio"].visually-hidden {
   width: 940px;
   margin: 65px auto 0;
   padding: 0;
-  /*outline: 2px solid yellow;*/
 }
 
 .company {
@@ -738,7 +857,6 @@ input[type="radio"].visually-hidden {
   margin-right: 100px;
   padding: 0;
   padding-top: 15px;
-  /*outline: 2px solid green;*/
 }
 
 .contacts {
@@ -746,10 +864,9 @@ input[type="radio"].visually-hidden {
   margin: 0;
   padding: 0;
   padding-top: 15px;
-  /*outline: 2px solid blue;*/
 }
 
-.company h2,  /*не получается подобрать межбуквенное расстояние. Или это разница в отображении шрифтов?*/
+.company h2,
 .contacts h2 {
   display: block;
   margin: 0;
@@ -757,7 +874,6 @@ input[type="radio"].visually-hidden {
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
-  /*outline: 2px solid green;*/
 }
 
 .company p,
@@ -768,7 +884,6 @@ input[type="radio"].visually-hidden {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
-  /*outline: 2px solid orange;*/
 }
 
 
@@ -778,12 +893,12 @@ input[type="radio"].visually-hidden {
 }
 
 .partners-list {
-  position: relative;
   margin: 0;
   padding: 0;
 }
 
 .partner {
+  position: relative;
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
@@ -799,24 +914,16 @@ input[type="radio"].visually-hidden {
 
 .partner::before {
   position: absolute;
+  top: 10px;
+  left: 0;
   content: "";
   width: 26px;
   height: 2px;
   background-color: #ee3643;
-  top: 10px;
-  left: 0;
-}
-
-.partner:nth-child(2)::before {
-  top: 50px;
-}
-
-.partner:last-child::before {
-  top: 88px;
 }
 
 .contacts p {
-  margin-right: 115px;
+  width: 220px;
   margin-bottom: 30px;
 }
 
@@ -826,8 +933,7 @@ input[type="radio"].visually-hidden {
   background-color: #eeeae3;
 }
 
-.company .button,
-.contacts .button {
+.about-us .button {
   display: block;
   margin-top: 35px;
   margin-bottom: 0;
@@ -836,9 +942,7 @@ input[type="radio"].visually-hidden {
 }
 
 .company .button {
-  display: inline-block;
-  padding-left: 40px;
-  padding-right: 40px;
+  width: 220px;
 }
 
 .main-footer {
@@ -865,9 +969,16 @@ input[type="radio"].visually-hidden {
   padding-bottom: 50px;
 }
 
+.footer-column .logo {
+  display: inline-block;
+}
+
 .footer-logo-link {
   display: block;
-  padding: 17px 41px;
+  width: 220px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  text-align: center;
   font-size: 30px;
   line-height: 30px;
   color: #ffffff;
@@ -886,7 +997,6 @@ input[type="radio"].visually-hidden {
   padding: 0;
   padding-left: 2px;
   font-style: inherit;
-  /*outline: 2px solid red;*/
 }
 
 .footer-site-navigation,
@@ -898,18 +1008,27 @@ input[type="radio"].visually-hidden {
   margin-top: 38px;
   padding: 0;
   list-style: none;
-  /*outline: 2px solid yellow;*/
 }
 
 .footer-site-navigation li,
 .goods-list li {
   margin: 0;
   margin-left: 55px;
-  /*outline: 2px solid white;*/
 }
 
 .goods-list a {
   color: #ffd180;
+}
+
+.footer-site-navigation a:hover,
+.goods-list a:hover {
+  text-decoration: underline;
+}
+
+.footer-site-navigation a:active,
+.goods-list a:active {
+  text-decoration: none;
+  opacity: 0.5;
 }
 
 .page-info {
@@ -922,9 +1041,9 @@ input[type="radio"].visually-hidden {
 
 .page-info-wrapper {
   display: flex;
+  justify-content: space-between;
   width: 940px;
   margin: 0 auto;
-  /*outline: 2px solid yellow;*/
 }
 
 .copyright,
@@ -933,10 +1052,8 @@ input[type="radio"].visually-hidden {
 }
 
 .copyright {
-  width: 250px;
+  width: 270px;
   margin: 0;
-  margin-right: 145px;
-  /*outline: 2px solid orange;*/
 }
 
 .page-info ul {
@@ -949,121 +1066,240 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
   width: 135px;
-  /*outline: 2px solid green;*/
 }
 
 .social li {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background-color: #212a3a;
-  /*outline: 2px solid white;*/
+  background-color: #212a3a; /*не работает*/
+}
+
+.social li:hover,
+.social li:active {
+  background-color: #ee3643; /*не работает*/
 }
 
 .social li:first-child {
-  background-image: url("img/icon-vk.svg");
+  background: url("../img/icon-vk.svg") no-repeat 8px 14px;
+  background-color: #212a3a;
 }
 
 .social li:nth-child(2) {
-  background-image: url("img/icon-fb.svg");
+  background: url("../img/icon-fb.svg") no-repeat 15px 11px;
+  background-color: #212a3a;
 }
 
 .social li:last-child {
-  background-image: url("img/icon-insta.svg");
+  background: url("../img/icon-insta.svg") no-repeat 11px 11px;
+  background-color: #212a3a;
 }
 
-.feedback {  /*не получается сдвинуть блок вправо*/
+.feedback {
   display: flex;
   justify-content: space-between;
   width: 300px;
-  margin-left: 115px;  /*не работает!!!*/
-  /*outline: 2px solid red;*/
 }
 
 .feedback a {
   color: #ffd180;
 }
 
-
-/*с модальными окнами пока не поняла совсем, им размеры фиксированные задавать можно? И как их, просто стилизовать пока и оставить "висеть" внизу страницы?
-
-
-
-.modal-map img {
-  background-color: #565656;
-  box-shadow: 0 0 30px 10px #565656;
+.feedback a:hover {
+  text-decoration: underline;
 }
 
-.modal ::-webkit-input-placeholder { color: #a9a9a9; padding: 10px;}
-.modal ::-moz-placeholder          { color: #a9a9a9; padding: 10px;}
-.modal :-moz-placeholder           { color: #a9a9a9; padding: 10px;}
-.modal :-ms-input-placeholder      { color: #a9a9a9; padding: 10px;}
+.feedback a:active {
+  color: #ee3643;
+  text-decoration: none;
+}
 
+.modal-map {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 357px;
+  margin-left: -470px;
+  width: 940px;
+  height: 450px;
+}
+
+.modal-map img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #565656;
+  box-shadow: 0 0 15px 5px rgba(86, 86, 86, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  font-size: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 22px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #ee3643;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
 
 .modal,
 .modal-cart {
-  position: relative;
+  display: none;
+  position: fixed;
   width: 620px;
-  height: 425px;
-  margin: auto;
   box-shadow:
-        0 -5px #ee3643,
-        0 0 5px 5px;
+    0 -5px #ee3643,
+    0 10px 25px 10px rgba(86, 86, 86, 0.4);
+}
 
+.modal {
+  bottom: 200px;
+  left: 50%;
+  margin-left: -310px;
+  background-image: linear-gradient(to bottom, #ffffff 74%, #f4f4f4 74%);
 }
 
 .message-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 30px auto;
   width: 460px;
-
+  margin: 30px auto 0;
+  padding: 0;
 }
 
 .message-form .message-item {
   width: 220px;
-  margin-top: 20px;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
-.message-form textarea {
-  width: 460px;
+.message-form .user-letter {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 37px;
 }
 
-.modal label {
+.message-form label {
   display: block;
+  margin: 12px 0 12px;
   font-size: 18px;
 }
 
-.field-form {
-  font-size: 13px;
+.field-form,
+.message-form textarea {
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: 8px;
+  padding-left: 15px;
+  border: 2px solid #d7dcde;
+  border-radius: 3px;
   font-family: "PT Sans", Arial, sans-serif;
   color: #a9a9a9;
 }
 
-.modal-button-wrap {
-  background-color: #f4f4f4;
+.field-form:hover,
+.message-form textarea:hover {
+  border: 2px solid #b5b5b5;
 }
 
-.modal-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 23px;
-  height: 23px;
-  background-color: red;
+.field-form:focus,
+.message-form textarea:focus {
+  border: 2px solid #ee3643;
+}
+
+
+.field-form {
+  width: 220px;
+  padding-bottom: 9px;
+  font-size: 13px;
+}
+
+.user-letter textarea {
+  width: 100%;
+  padding-bottom: 85px;
+}
+
+.message-form .button {
+  display: block;
+  width: 100%;
+  margin-top: 37px;
+  margin-bottom: 37px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.modal-cart {
+  top: 410px;
+  left: 50%;
+  margin-left: -310px;
+  padding-top: 10px;
+  background-image: linear-gradient(to bottom, #ffffff 60%, #f1f1f1 60%);
+}
+
+.modal-cart-wrapper {
+  position: relative;
+  width: 460px;
+  margin: 37px auto 0;
 }
 
 .modal-cart b {
+  display: block;
+  margin-bottom: 50px;
+  padding: 20px;
+  padding-left: 97px;
   font-size: 30px;
   line-height: 30px;
 }
 
+.modal-cart-wrapper::before {
+  position: absolute;
+  content: "";
+  width: 68px;
+  height: 68px;
+  top: 0;
+  left: 0;
+  background: url("../img/icon-confirm.svg") no-repeat 0 0;
+}
+
 .modal-cart-bottom {
-  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding-bottom: 37px;
+}
+
+.modal-cart-bottom a {
+  display: block;
+  box-sizing: border-box;
+  width: 220px;
+  margin: 0;
+  margin-top: 37px;
+  padding: 13px;
 }
 
 .more-shopping {
   color: #000000;
   background-color: #ffffff;
-}*/
+}
