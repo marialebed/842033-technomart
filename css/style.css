@@ -146,8 +146,9 @@ input[type="radio"].visually-hidden {
 }
 
 .input-search::placeholder {
-  font-size: 17px;    /*через inherit не работает*/
   font-family: "Cuprum", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 18px;
   color: #ffffff;
 }
 
@@ -705,8 +706,6 @@ input[type="radio"].visually-hidden {
   list-style: none;
 }
 
-/*не получается расположить картинки как на макете*/
-
 .catalog-item {
   position: relative;
   width: 217px;
@@ -720,10 +719,6 @@ input[type="radio"].visually-hidden {
 
 .catalog-item:nth-child(3n) {
   margin-right: 0;
-}
-
-.catalog-item:nth-child(3n) .item-price {
-  margin-top: 40px;
 }
 
 .catalog-item .actions {
@@ -754,22 +749,7 @@ input[type="radio"].visually-hidden {
 }
 
 .catalog-item img {
-  width: 127px;
-  height: 115px;
-  margin: 25px 53px 25px 40px;
-  padding: 0;
-}
-
-.catalog-item:nth-child(3n-1) img {
-  width: 145px;
-  height: 125px;
-  margin-top: 20px;
-  margin-left: 27px;
-  margin-bottom: 20px;
-}
-
-.catalog-item:nth-child(3n) img {
-  margin-left: 30px;
+  margin: 0;
 }
 
 .catalog-item .actions {
@@ -844,8 +824,8 @@ input[type="radio"].visually-hidden {
 .item-price {
   position: relative;
   width: 80px;
-  margin-top: 11px;
-  margin-bottom: 17px;
+  margin-top: 10px;
+  margin-bottom: 18px;
   margin-left: 43px;
   padding: 11px 30px;
   border-radius: 3px;
@@ -860,6 +840,10 @@ input[type="radio"].visually-hidden {
   height: 0;
   border: 20px solid #ffffff;
   border-left-color: #ee3643;
+}
+
+.item-no-sale {
+  margin-top: 38px;
 }
 
 .about-us {
