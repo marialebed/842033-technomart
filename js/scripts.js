@@ -48,6 +48,7 @@ close.addEventListener("click", function (evt) {
 form.addEventListener("submit", function (evt) {
   if (!name.value || !email.value) {
     evt.preventDefault();
+    popup.classList.add("modal-error");
     console.log("Введите имя и адрес электронной почты");
   } else {
     if (isStorageSupport) {

@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no"/>
     <title>HTML Academy: Техномарт каталог</title>
-    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700|PT+Sans:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link href="css/style.min.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
@@ -86,8 +85,8 @@
     <main class="inner-container">
       <div class="inner-wrapper">
         <ul class="breadcrumbs">
-          <li class="breadcrumbs-first"><a href="index.html"><span>Главная</span></a></li>  <!--ссылка не работает-->
-          <li><a href="#">Каталог</a></li>
+          <li class="breadcrumbs-first"><a class="breadcrumbs-first-link" href="index.html" aria-label="Главная страница"></a></li>
+          <li class="breadcrumbs-catalog"><a href="#">Каталог</a></li>
           <li><a href="#">Инструмент</a></li>
           <li class="breadcrumbs-current">Перфораторы</li>
         </ul>
@@ -168,7 +167,6 @@
             </div>
             <ul class="catalog-list">
               <li class="catalog-item">
-                <span class="flag">New</span>
                 <div class="image">
                   <img src="img/product-1.jpg" width="217" height="165" alt="Перфоратор BOSCH BFG 3000">
                 </div>
@@ -179,11 +177,10 @@
                 <h3>
                   <a class="catalog-item-name" href="#">Перфоратор BOSCH BFG 3000</a>
                 </h3>
-                <span class="item-price-last"><del>22500 P.</del></span>
-                <a class="item-price button" href="#"><b>15500 P.</b></a>
+                <span class="item-price-last">22500 P.</span>
+                <a class="item-price button" href="#">15500 P.</a>
               </li>
               <li class="catalog-item">
-                <span class="flag">New</span>
                 <div class="image">
                   <img src="img/product-2.jpg" width="217" height="165" alt="Перфоратор BOSCH BFG 6000">
                 </div>
@@ -194,11 +191,10 @@
                 <h3>
                   <a class="catalog-item-name" href="#">Перфоратор BOSCH BFG 6000</a>
                 </h3>
-                <span class="item-price-last"><del>30500 P.</del></span>
-                <a class="item-price button" href="#"><b>25500 P.</b></a>
+                <span class="item-price-last">30500 P.</span>
+                <a class="item-price button" href="#">25500 P.</a>
               </li>
-              <li class="catalog-item">
-                <span class="flag flag-new">New</span>
+              <li class="catalog-item flag-new">
                 <div class="image">
                   <img src="img/product-3.jpg" width="217" height="165" alt="Перфоратор BOSCH BFG 2000">
                 </div>
@@ -209,10 +205,9 @@
                 <h3>
                   <a class="catalog-item-name" href="#">Перфоратор BOSCH BFG 2000</a>
                 </h3>
-                <a class="item-price button item-no-sale" href="#"><b>12500 P.</b></a>
+                <a class="item-price button item-no-sale" href="#">12500 P.</a>
               </li>
               <li class="catalog-item">
-                <span class="flag">New</span>
                 <div class="image">
                   <img src="img/product-1.jpg" width="217" height="165" alt="Перфоратор BOSCH BFG 3000">
                 </div>
@@ -223,11 +218,10 @@
                 <h3>
                   <a class="catalog-item-name" href="#">Перфоратор BOSCH BFG 3000</a>
                 </h3>
-                <span class="item-price-last"><del>22500 P.</del></span>
-                <a class="item-price button" href="#"><b>15500 P.</b></a>
+                <span class="item-price-last">22500 P.</span>
+                <a class="item-price button" href="#">15500 P.</a>
               </li>
-              <li class="catalog-item">
-                <span class="flag flag-new">New</span>
+              <li class="catalog-item flag-new">
                 <div class="image">
                   <img src="img/product-2.jpg" width="217" height="165" alt="Перфоратор BOSCH BFG 6000">
                 </div>
@@ -238,11 +232,10 @@
                 <h3>
                   <a class="catalog-item-name" href="#">Перфоратор BOSCH BFG 6000</a>
                 </h3>
-                <span class="item-price-last"><del>30500 P.</del></span>
-                <a class="item-price button" href="#"><b>25500 P.</b></a>
+                <span class="item-price-last">30500 P.</span>
+                <a class="item-price button" href="#">25500 P.</a>
               </li>
               <li class="catalog-item">
-                <span class="flag">New</span>
                 <div class="image">
                   <img src="img/product-3.jpg" width="217" height="165" alt="Перфоратор BOSCH BFG 2000">
                 </div>
@@ -253,10 +246,9 @@
                 <h3>
                   <a class="catalog-item-name" href="#">Перфоратор BOSCH BFG 2000</a>
                 </h3>
-                <a class="item-price button item-no-sale" href="#"><b>12500 P.</b></a>
+                <a class="item-price button item-no-sale" href="#">12500 P.</a>
               </li>
-              <li class="catalog-item">
-                <span class="flag flag-new">New</span>
+              <li class="catalog-item flag-new">
                 <div class="image">
                   <img src="img/product-1.jpg" width="217" height="165" alt="Перфоратор BOSCH BFG 3000">
                 </div>
@@ -267,11 +259,10 @@
                 <h3>
                   <a class="catalog-item-name" href="#">Перфоратор BOSCH BFG 3000</a>
                 </h3>
-                <span class="item-price-last"><del>22500 P.</del></span>
-                <a class="item-price button" href="#"><b>15500 P.</b></a>
+                <span class="item-price-last">22500 P.</span>
+                <a class="item-price button" href="#">15500 P.</a>
               </li>
               <li class="catalog-item">
-                <span class="flag">New</span>
                 <div class="image">
                   <img src="img/product-2.jpg" width="217" height="165" alt="Перфоратор BOSCH BFG 6000">
                 </div>
@@ -282,11 +273,10 @@
                 <h3>
                   <a class="catalog-item-name" href="#">Перфоратор BOSCH BFG 6000</a>
                 </h3>
-                <span class="item-price-last"><del>30500 P.</del></span>
-                <a class="item-price button" href="#"><b>25500 P.</b></a>
+                <span class="item-price-last">30500 P.</span>
+                <a class="item-price button" href="#">25500 P.</a>
               </li>
               <li class="catalog-item">
-                <span class="flag">New</span>
                 <div class="image">
                   <img src="img/product-3.jpg" width="217" height="165" alt="Перфоратор BOSCH BFG 2000">
                 </div>
@@ -297,7 +287,7 @@
                 <h3>
                   <a class="catalog-item-name" href="#">Перфоратор BOSCH BFG 2000</a>
                 </h3>
-                <a class="item-price button item-no-sale" href="#"><b>12500 P.</b></a>
+                <a class="item-price button item-no-sale" href="#">12500 P.</a>
               </li>
             </ul>
             <ul class="pagination">
@@ -362,9 +352,9 @@
             Все&nbsp;права защищены
           </p>
           <ul class="social">
-            <li tabindex="0"><a class="social-link social-link-vk" href="https://vk.com/" aria-label="Техномарт ВКонтакте"><span class="visually-hidden">ВКонтакте</span></a></li>
-            <li tabindex="0"><a class="social-link social-link-fb" href="https://facebook.com/" aria-label="Техномарт на Фейсбуке"><span class="visually-hidden">Facebook</span></a></li>
-            <li tabindex="0"><a class="social-link social-link-insta" href="https://instagram.com/" aria-label="Техномарт в Инстаграм"><span class="visually-hidden">Instagram</span></a></li>
+            <li tabindex="0"><a class="social-link social-link-vk" href="https://vk.com/" aria-label="Техномарт ВКонтакте"></a></li>
+            <li tabindex="0"><a class="social-link social-link-fb" href="https://facebook.com/" aria-label="Техномарт на Фейсбуке"></a></li>
+            <li tabindex="0"><a class="social-link social-link-insta" href="https://instagram.com/" aria-label="Техномарт в Инстаграм"></a></li>
           </ul>
           <ul class="feedback">
             <li>
